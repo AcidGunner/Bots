@@ -16,12 +16,12 @@ async def on_ready():
     activity = discord.Activity(
         type=discord.ActivityType.playing, # Or watching, listening, streaming
         name='AcidPS3DEV',
-        details='AcidPS3 Service?',
+        details='AcidPS3 Service',
         state="𝔸𝕔𝕚𝕕ℙ𝕊𝟛𝔻𝕖𝕧"
     )
-    #firstchannel = bot.get_channel(1424094875468693544)
+    firstchannel = bot.get_channel(1459965721609244913)
     await bot.change_presence(activity=activity)
-    #await firstchannel.send("Bot activated.")
+    await firstchannel.send("I think I just booted up.")
 
 #@tasks.loop(hours=1.0)
 #async def send_message():
@@ -112,14 +112,18 @@ async def on_message(message):
     if message.content.lower().startswith('!'):
         command = message.content[1:].lower().split(' ')[0]
 
-        if command == 'acidtest':
+        if command == 'bot':
             await message.channel.send("I am a Bot!")
+            await message.channel.send(":D")
             
         if command == 'badapple':
             msg = "==============\n" \
                   "    Bad Apple!!\n" \
                   "=============="
             await message.channel.send(msg)
+        
+        if command == 'when':
+            await message.channel.send("Someday, eventually.")
 
 #│Run the bot
 bot.run(os.getenv("DISCORD_TOKEN"))

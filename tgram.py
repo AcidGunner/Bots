@@ -6,12 +6,7 @@ import time
 import requests
 from io import BytesIO
 import os
-
-#site='http://acidgunstudios.22web.org/RES05/pic ('
-#fullwebsiteurl='http://acidgunstudios.22web.org/'
-#fwu2='http://acidgunstudios.22web.org/RES01/'
-#test='Bad Apple PC98 but Green Hill Zone Interrupts'
-#mp3='.mp3'
+import aiohttp
 
 logging.basicConfig(
     format='%(asctime)s - %(levelname)s - %(message)s',
@@ -36,23 +31,22 @@ async def chlen(update: Update, context: ContextTypes.DEFAULT_TYPE):
 async def koishi(update: Update, context: ContextTypes.DEFAULT_TYPE):
     url = "https://acidnt31.thsite.top/assets/random-image.php"
 
-    headers = {
-        "User-Agent": "Mozilla/5.0"
-    }
+    async with aiohttp.ClientSession() as session:
+        async with session.get(url) as r:
+            data = await r.read()
 
-    r = requests.get(url, headers=headers, timeout=10)
-    r.raise_for_status()
-
-    img = BytesIO(r.content)
-    img.seek(0)              # 🔴 REQUIRED
-    img.name = "image.jpg"   # 🔴 REQUIRED
-    
-    with open("image.jpg", "wb") as f:
-        f.write(r.content)
+    img = BytesIO(data)
+    img.name = "image.jpg"
 
     await context.bot.send_photo(
         chat_id=update.effective_chat.id,
         photo=img
+    )
+
+async def koishi_1(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    await context.bot.send_photo(
+        chat_id=update.effective_chat.id,
+        photo="https://acidnt31.thsite.top/assets/random-image.php"
     )
 
 async def fido(update: Update, context: ContextTypes.DEFAULT_TYPE):
@@ -62,13 +56,6 @@ async def behold(update: Update, context: ContextTypes.DEFAULT_TYPE):
     await context.bot.send_message(chat_id=update.effective_chat.id, text='УЗРИТЕ!!!')
     await context.bot.send_message(chat_id=update.effective_chat.id, text='крч забейте.')
 
-#async def music(update: Update, context: ContextTypes.DEFAULT_TYPE):
-#    await context.bot.send_voice(chat_id=update.effective_chat.id, voice='http://acidgunstudios.22web.org/RES01/Sonic%202%20-%20Flying%20Battery%20Zone%20Act%201.ogg?i=1')
-
-#async def music2(update: Update, context: ContextTypes.DEFAULT_TYPE):
-#    muzica=''.join([fwu2, test, mp3])
-#    await context.bot.send_voice(chat_id=update.effective_chat.id, voice=muzica)
-
 if __name__ == '__main__':
     application = ApplicationBuilder().token(os.getenv("TG_TOKEN")).build()
 
@@ -77,15 +64,13 @@ if __name__ == '__main__':
     ban_handler = CommandHandler('ban', ban)
     start_handler = CommandHandler('start', start)
     koishi_handler = CommandHandler('koishi', koishi)
-    #music_handler = CommandHandler('music', music)
+    koishi1_handler = CommandHandler('koishi1', koishi1)
     gtaiv_handler = CommandHandler('gtaiv', gtaiv)
-    #music2_handler = CommandHandler('music2', music2)
     behold_handler = CommandHandler('behold', behold)
     chlen_handler = CommandHandler('chlen', chlen)
     application.add_handler(koishi_handler)
+    application.add_handler(koishi1_handler)
     application.add_handler(behold_handler)
-    #application.add_handler(music_handler)
-    #application.add_handler(music2_handler)
     application.add_handler(start_handler)
     application.add_handler(help_handler)
     application.add_handler(fido_handler)
