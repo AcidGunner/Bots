@@ -1,4 +1,4 @@
-name: Run Bot
+name: Telegram Bot
 
 on:
   workflow_dispatch:
@@ -20,8 +20,7 @@ jobs:
       - name: Install packages
         run: pip install -r requirements.txt
 
-      - name: Run bot
+      - name: Telegram Bot
         env:
-          DISCORD_TOKEN: ${{ secrets.DISCORD_TOKEN }}
           TG_TOKEN: ${{ secrets.TG_TOKEN }}
-        run: python dcord.py & python tgram.py
+        run: python tgram.py

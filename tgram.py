@@ -6,7 +6,6 @@ import time
 import requests
 from io import BytesIO
 import os
-import aiohttp
 
 logging.basicConfig(
     format='%(asctime)s - %(levelname)s - %(message)s',
@@ -28,26 +27,19 @@ async def ban(update: Update, context: ContextTypes.DEFAULT_TYPE):
 async def chlen(update: Update, context: ContextTypes.DEFAULT_TYPE):
     await context.bot.send_message(chat_id=update.effective_chat.id, text='зачем ты ввел эту команду? ._.')
 
-async def koishi(update: Update, context: ContextTypes.DEFAULT_TYPE):
+async def koishi(update, context):
+    await update.message.reply_photo(
+        "https://acidnt31.thsite.top/assets/random-image.php"
+    )
+
+async def koishi_1(update, context):
     url = "https://acidnt31.thsite.top/assets/random-image.php"
 
-    async with aiohttp.ClientSession() as session:
-        async with session.get(url) as r:
-            data = await r.read()
+    r = requests.get(url)
+    img = BytesIO(r.content)
+    img.name = "koishi.jpg"
 
-    img = BytesIO(data)
-    img.name = "image.jpg"
-
-    await context.bot.send_photo(
-        chat_id=update.effective_chat.id,
-        photo=img
-    )
-
-async def koishi_1(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    await context.bot.send_photo(
-        chat_id=update.effective_chat.id,
-        photo="https://acidnt31.thsite.top/assets/random-image.php"
-    )
+    await update.message.reply_photo(photo=img)
 
 async def fido(update: Update, context: ContextTypes.DEFAULT_TYPE):
     await context.bot.send_message(chat_id=update.effective_chat.id, text='Страна ФИДО. Отсылка на колобангу!')
