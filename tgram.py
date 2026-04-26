@@ -28,18 +28,20 @@ async def chlen(update: Update, context: ContextTypes.DEFAULT_TYPE):
     await context.bot.send_message(chat_id=update.effective_chat.id, text='зачем ты ввел эту команду? ._.')
 
 async def koishi(update, context):
-    await update.message.reply_photo(
-        "https://acidnt31.thsite.top/assets/random-image.php"
-    )
+    await context.bot.send_message(chat_id=update.effective_chat.id, text='Эта команда временно недоступна. Посетите данный сайт: https://acidnt31.22web.org/assets/random-image.php')
 
-async def koishi_1(update, context):
-    url = "https://acidnt31.thsite.top/assets/random-image.php"
+    # await update.message.reply_photo(
+        # "https://acidnt31.22web.org/assets/random-image.php"
+    # )
 
-    r = requests.get(url)
-    img = BytesIO(r.content)
-    img.name = "koishi.jpg"
+# async def koishi_1(update, context):
+    # url = "https://acidnt31.22web.org/assets/random-image.php"
 
-    await update.message.reply_photo(photo=img)
+    # r = requests.get(url)
+    # img = BytesIO(r.content)
+    # img.name = "koishi.jpg"
+
+    # await update.message.reply_photo(photo=img)
 
 async def fido(update: Update, context: ContextTypes.DEFAULT_TYPE):
     await context.bot.send_message(chat_id=update.effective_chat.id, text='Страна ФИДО. Отсылка на колобангу!')
@@ -56,12 +58,12 @@ if __name__ == '__main__':
     ban_handler = CommandHandler('ban', ban)
     start_handler = CommandHandler('start', start)
     koishi_handler = CommandHandler('koishi', koishi)
-    koishi_1_handler = CommandHandler('koishi_1', koishi_1)
+    #koishi_1_handler = CommandHandler('koishi_1', koishi_1)
     gtaiv_handler = CommandHandler('gtaiv', gtaiv)
     behold_handler = CommandHandler('behold', behold)
     chlen_handler = CommandHandler('chlen', chlen)
     application.add_handler(koishi_handler)
-    application.add_handler(koishi_1_handler)
+    #application.add_handler(koishi_1_handler)
     application.add_handler(behold_handler)
     application.add_handler(start_handler)
     application.add_handler(help_handler)
