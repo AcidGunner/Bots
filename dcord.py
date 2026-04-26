@@ -58,7 +58,7 @@ async def on_message(message):
 
     #│PS3 Game publish!
     if message.author.id == acid_user_id and message.content.startswith('POST_PS3_NEW '):
-        dev = message.content[14:]
+        dev = message.content[13:]
         print(dev)
         embed = discord.Embed(title="**New PS3 game just dropped!**",
             colour=0x00851b,
@@ -77,7 +77,7 @@ async def on_message(message):
 
     #│PS3 Game update!
     if message.author.id == acid_user_id and message.content.startswith('POST_PS3_UPD '):
-        dev = message.content[14:]
+        dev = message.content[13:]
         print(dev)
         embed = discord.Embed(title="**Existing PS3 game just updated!**",
             colour=0x00851b,
@@ -96,7 +96,7 @@ async def on_message(message):
 
     #│PS4 Game publish!
     if message.author.id == acid_user_id and message.content.startswith('POST_PS4_NEW '):
-        dev = message.content[14:]
+        dev = message.content[13:]
         print(dev)
         embed = discord.Embed(title="**New PS4 game just dropped!**",
             colour=0x00851b,
@@ -115,7 +115,7 @@ async def on_message(message):
 
     #│PS4 Game update!
     if message.author.id == acid_user_id and message.content.startswith('POST_PS4_UPD '):
-        dev = message.content[14:]
+        dev = message.content[13:]
         print(dev)
         embed = discord.Embed(title="**Existing PS4 game just updated!**",
             colour=0x00851b,
@@ -134,7 +134,7 @@ async def on_message(message):
 
     #│PSVita Game publish!
     if message.author.id == acid_user_id and message.content.startswith('POST_PSV_NEW '):
-        dev = message.content[14:]
+        dev = message.content[13:]
         print(dev)
         embed = discord.Embed(title="**New PSVita game just dropped!**",
             colour=0x00851b,
@@ -153,7 +153,7 @@ async def on_message(message):
 
     #│PSVita Game update!
     if message.author.id == acid_user_id and message.content.startswith('POST_PSV_UPD '):
-        dev = message.content[14:]
+        dev = message.content[13:]
         print(dev)
         embed = discord.Embed(title="**Existing PSVita game just updated!**",
             colour=0x00851b,
@@ -172,7 +172,7 @@ async def on_message(message):
 
     #│PSP Game publish!
     if message.author.id == acid_user_id and message.content.startswith('POST_PSP_NEW '):
-        dev = message.content[14:]
+        dev = message.content[13:]
         print(dev)
         embed = discord.Embed(title="**New PSP game just dropped!**",
             colour=0x00851b,
@@ -191,7 +191,7 @@ async def on_message(message):
 
     #│PSP Game update!
     if message.author.id == acid_user_id and message.content.startswith('POST_PSP_UPD '):
-        dev = message.content[14:]
+        dev = message.content[13:]
         print(dev)
         embed = discord.Embed(title="**Existing PSP game just updated!**",
             colour=0x00851b,
