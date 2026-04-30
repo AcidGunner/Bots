@@ -13,17 +13,22 @@ A collection of utility bots for Discord and Telegram, maintained by AcidGunner.
 ## Installation
 
 1. Clone the repository:
+```
    git clone https://github.com/AcidGunner/Bots.git
    cd Bots
+```
 
-2. Create a virtual environment (Recommended):
+3. Create a virtual environment (Recommended):
+ ```
    python -m venv venv
    source venv/bin/activate
+```
 
-3. Install the required dependencies:
+4. Install the required dependencies:
+ ```
    pip install -r requirements.txt
-
-4. Configure your Environment Variables:
+```
+5. Configure your Environment Variables:
    Create a `.env` file to store your tokens securely:
    nano .env
    
