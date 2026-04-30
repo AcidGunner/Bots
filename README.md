@@ -3,6 +3,10 @@
 A collection of utility bots for Discord and Telegram, maintained by AcidGunner.
 * instructions will be on the installation step
 * README.md created by ERRORminePC
+
+## 🔗 Connect with Me
+[![YouTube Channel](https://img.shields.io/badge/YouTube-acidnt3.1-blue?style=for-the-badge&logo=youtube&logoColor=white)](https://www.youtube.com/@acidnt3.1)
+[![GitHub followers](https://img.shields.io/github/followers/AcidGunner?style=for-the-badge&logo=github&color=333)](https://github.com/AcidGunner)
 ## Prerequisites
 
 * Python 3.x installed on your system.
