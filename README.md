@@ -11,6 +11,10 @@ A collection of utility bots for Discord and Telegram, maintained by AcidGunner.
 ### Core Languages & Libraries
 ![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
 
+### Specialized Tools
+![Git](https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white)
+![Termux](https://img.shields.io/badge/Termux-Environment-8D6E63?style=for-the-badge&logo=linux)
+
 ## Prerequisites
 
 * Python 3.x installed on your system.
@@ -25,7 +29,10 @@ A collection of utility bots for Discord and Telegram, maintained by AcidGunner.
    git clone https://github.com/AcidGunner/Bots.git
    cd Bots
 ```
-
+2. Install these 2 termux packages
+```
+   pkg install git python
+```
 3. Create a virtual environment (Recommended):
  ```
    python -m venv venv
