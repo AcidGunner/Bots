@@ -7,6 +7,10 @@ A collection of utility bots for Discord and Telegram, maintained by AcidGunner.
 ## 🔗 Connect with Me
 [![YouTube Channel](https://img.shields.io/badge/YouTube-acidnt3.1-blue?style=for-the-badge&logo=youtube&logoColor=white)](https://www.youtube.com/@acidnt3.1)
 [![GitHub followers](https://img.shields.io/github/followers/AcidGunner?style=for-the-badge&logo=github&color=333)](https://github.com/AcidGunner)
+
+### Core Languages & Libraries
+![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
+
 ## Prerequisites
 
 * Python 3.x installed on your system.
