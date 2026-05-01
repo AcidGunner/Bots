@@ -31,18 +31,18 @@ A collection of utility bots for Discord and Telegram, maintained by AcidGunner.
 ```
 2. Install these 2 termux packages
 ```
-   pkg install git python
+   pkg install git python tmux
 ```
 3. Create a virtual environment (Recommended):
  ```
    python -m venv venv
    source venv/bin/activate
-```
+ ```
 
 4. Install the required dependencies:
  ```
    pip install -r requirements.txt
-```
+ ```
 5. Configure your Environment Variables:
    Create a `.env` file to store your tokens securely:
    nano .env
@@ -58,9 +58,14 @@ A collection of utility bots for Discord and Telegram, maintained by AcidGunner.
 To start the bots, use the following commands in your terminal:
 
 * For the Discord bot:
-  python dcord.py
+ ``` python dcord.py ```
 
 * For the Telegram bot:
-  python tgram.py
+ ``` python tgram.py ```
 
 * Tip for Android/Termux users: Use `tmux` to keep the bots running in the background after you close the app.
+* tmux Command listing down
+* Start a new session: ``` tmux new -s my_bot ```
+* List active sessions: ``` tmux ls ```
+* Reattach to a session: ``` tmux attach -t my_bot ```
+* Kill a session: ``` tmux kill-session -t my_bot ```
