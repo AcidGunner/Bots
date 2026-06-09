@@ -147,7 +147,7 @@ async def the_funny(update: Update, context: ContextTypes.DEFAULT_TYPE):
         os._exit(0)
         
     
-    if message.=="ода": await update.message.reply_text("ода пизда оооооо")
+    if message=="ода": await update.message.reply_text("ода пизда оооооо")
     
     if message=="а": await update.message.reply_text("а? А? ЧТО А?? уточняй, пидор ебаный")
     elif message=="б": await update.message.reply_text("б.. блять.")
