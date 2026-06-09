@@ -98,7 +98,10 @@ async def the_funny(update: Update, context: ContextTypes.DEFAULT_TYPE):
         await update.message.reply_text("хуево ты шутишь, больше так не делай прошу </3")
     elif message.endswith("хуй"):
         await update.message.reply_text("твой?")
-    
+    elif message.endswith("попа"):
+        await update.message.reply_text("ПОП, а не попа. вы че бля, русский не знаете?")
+    elif message.endswith("опа"):
+        await update.message.reply_text("хуёба")
     
     if "всмысле" in message:
         await update.message.reply_text("вкарамысле")
@@ -110,6 +113,8 @@ async def the_funny(update: Update, context: ContextTypes.DEFAULT_TYPE):
     elif "вуман" in message or "вумен" in message:
         img = my_url + "woman.jpg"
         await context.bot.send_photo(chat_id=update.effective_chat.id, photo=img, reply_to_message_id=update.message.message_id)
+    elif "роблокс" in message or "roblox" in message:
+        await update.message.reply_text("портал в мир роблокса")
     elif "почему" in message:
         because = random.randint(1, 3)
         if because == 1:
@@ -123,11 +128,13 @@ async def the_funny(update: Update, context: ContextTypes.DEFAULT_TYPE):
             await context.bot.send_photo(chat_id=update.effective_chat.id, photo=img, reply_to_message_id=update.message.message_id, caption="...")
     elif "тудо" in message:
         await update.message.reply_text("научитесь нормально писать, недоразвитые")
+    elif "ділда" in message:
+        await update.message.reply_text("сходи нахуй бля")
     elif "автор" in message:
         await update.message.reply_text("итак автор, кто ты такой...")
     elif "r34" in message or "rule34" in message or "секс" in message or "порн" in message or "porn" in message or "sex" in message or "рул34" in message or "rule 34" in message or "r 34" in message or "р34" in message or "р 34" in message or "рул 34" in message or "правило34" in message or "правило 34" in message:
         await update.message.reply_text("болваны, только о сексе и думаете")
-    elif "мир" in message:
+    elif "мире" in message:
         await update.message.reply_text("> В мире нету красоты, чем пописать с высоты",parse_mode="Markdown")
     
     if message == "тайлер, отключайся":
@@ -138,6 +145,9 @@ async def the_funny(update: Update, context: ContextTypes.DEFAULT_TYPE):
         await update.message.reply_text("ладно, ладно, пойду я нахуй")
         await context.bot.send_message(chat_id=update.effective_chat.id, text="BOT HAS BEEN TURNED OFF.")
         os._exit(0)
+        
+    
+    if message.=="ода": await update.message.reply_text("ода пизда оооооо")
     
     if message=="а": await update.message.reply_text("а? А? ЧТО А?? уточняй, пидор ебаный")
     elif message=="б": await update.message.reply_text("б.. блять.")
@@ -150,7 +160,7 @@ async def the_funny(update: Update, context: ContextTypes.DEFAULT_TYPE):
     elif message=="з": await update.message.reply_text("заебись")
     elif message=="и": await update.message.reply_text("и? И? ИИИИИИИИИИИИИИИ")
     elif message=="й": await update.message.reply_text("нет, это не лучшая буква алфавита")
-    elif message=="к": await update.message.reply_text("сходи нахуй плиз </3")
+    elif message=="к": await update.message.reply_text("красива коиши как кегля")
     elif message=="л": await update.message.reply_text("л")
     elif message=="м": await update.message.reply_text("ам ам амммм")
     elif message=="н": await update.message.reply_text("нигерия")
