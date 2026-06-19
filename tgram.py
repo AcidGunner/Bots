@@ -21,7 +21,7 @@ logging.basicConfig(
 )
 
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    await context.bot.send_message(chat_id=update.effective_chat.id, text='Приветствую, друг мой. Я - супер увлекательный, и по меркам идиотичный бот, который был создан одним дибилом.\nВерсия бота: 0.6\nУдачи :>')
+    await context.bot.send_message(chat_id=update.effective_chat.id, text='Приветствую, друг мой. Я - супер увлекательный, и по меркам идиотичный бот, который был создан одним дибилом.\nВерсия бота: 0.65\nУдачи :>')
 
 async def gtaiv(update: Update, context: ContextTypes.DEFAULT_TYPE):
     await context.bot.send_message(chat_id=update.effective_chat.id, text='ну типа гта 4, ичо? стой. ГТА 4??? похуй.')
@@ -36,7 +36,10 @@ async def koishi(update, context):
     random_image = random.choice(images)
     print(random_image)
     image_url = "https://acidnt31.22web.org/assets/pictures/koishi/" + random_image
-    await context.bot.send_photo(chat_id=update.effective_chat.id, photo=image_url, reply_to_message_id=update.message.message_id, caption="/koishi - чтобы посмотреть еще\n\nСпасибо, что пользуетесь моим ботом!")
+    if random_image.endswith(".gif"):
+        await context.bot.send_animation(chat_id=update.effective_chat.id, animation=image_url, reply_to_message_id=update.message.message_id, caption="/koishi - чтобы посмотреть еще\n\nСпасибо, что пользуетесь моим ботом!")
+    else
+        await context.bot.send_photo(chat_id=update.effective_chat.id, photo=image_url, reply_to_message_id=update.message.message_id, caption="/koishi - чтобы посмотреть еще\n\nСпасибо, что пользуетесь моим ботом!")
 
 async def fido(update: Update, context: ContextTypes.DEFAULT_TYPE):
     await context.bot.send_message(chat_id=update.effective_chat.id, text='Страна ФИДО. Отсылка на колобангу!')
@@ -66,8 +69,6 @@ async def the_funny(update: Update, context: ContextTypes.DEFAULT_TYPE):
         await update.message.reply_text("динаху")
     elif message.endswith("отсоси у тракториста"):
         await update.message.reply_text("трактористом буду я, отсосешь ты от меня))")
-    elif message.endswith("."):
-        await update.message.reply_text("с точкой буду серьезнее. да-да.")
     elif message.endswith("пока"):
         await update.message.reply_text("не чета не хочу пока")
     elif message.endswith("штраф"):
@@ -78,8 +79,6 @@ async def the_funny(update: Update, context: ContextTypes.DEFAULT_TYPE):
         await update.message.reply_text("хуйня, а не идея. завались")
     elif message.endswith("хуйня"):
         await update.message.reply_text("это хуйня")
-    elif message.endswith("!"):
-        await update.message.reply_text("что орешь блять???")
     elif message.endswith(","):
         await update.message.reply_text("закончишь предложение, или я тебя выпорю за ошибки в грамматике?") 
     elif message.endswith("ебу"):
@@ -128,7 +127,7 @@ async def the_funny(update: Update, context: ContextTypes.DEFAULT_TYPE):
             await context.bot.send_photo(chat_id=update.effective_chat.id, photo=img, reply_to_message_id=update.message.message_id, caption="...")
     elif "тудо" in message:
         await update.message.reply_text("научитесь нормально писать, недоразвитые")
-    elif "ділда" in message:
+    elif "ділд" in message or "дилд" in message or "дiлд" in message:
         await update.message.reply_text("сходи нахуй бля")
     elif "автор" in message:
         await update.message.reply_text("итак автор, кто ты такой...")
