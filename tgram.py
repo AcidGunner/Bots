@@ -38,7 +38,7 @@ async def koishi(update, context):
     image_url = "https://acidnt31.22web.org/assets/pictures/koishi/" + random_image
     if random_image.endswith(".gif"):
         await context.bot.send_animation(chat_id=update.effective_chat.id, animation=image_url, reply_to_message_id=update.message.message_id, caption="/koishi - чтобы посмотреть еще\n\nСпасибо, что пользуетесь моим ботом!")
-    else
+    else:
         await context.bot.send_photo(chat_id=update.effective_chat.id, photo=image_url, reply_to_message_id=update.message.message_id, caption="/koishi - чтобы посмотреть еще\n\nСпасибо, что пользуетесь моим ботом!")
 
 async def fido(update: Update, context: ContextTypes.DEFAULT_TYPE):
