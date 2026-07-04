@@ -15,7 +15,7 @@ async def on_ready():
     print(f'We have logged in as {bot.user}')
     activity = discord.Activity(
         type=discord.ActivityType.playing, # Or watching, listening, streaming
-        name='PS3Sweeper+',
+        name='Random shittyness from AcidPS3 Store',
         details='AcidPS3 Service',
         state="Developing.."
     )
@@ -224,29 +224,6 @@ async def on_message(message):
         
         if command == 'when':
             await message.channel.send("Someday, eventually.")
-    
-    #│Fuck discord scams.
-    if message.channel.id == 1519815927800135830:
-        log_channel = bot.get_channel(1519816253940826184)
-
-        try:
-            await message.delete()
-            await message.author.ban(reason='Never trust "free money" shit.')
-            if log_channel:
-                await log_channel.send(
-                    f"**GOT SENT TO SHADOW REALM, BITCH!**\n"
-                    f'Goodbye, {message.author.mention} (`{message.author.id}`). Never trust "free money" shit.'
-                )
-
-        except discord.Forbidden:
-            if log_channel:
-                await log_channel.send("TEST.")
-
-        except Exception as e:
-            if log_channel:
-                await log_channel.send(f"OH NO!! `{e}`")
-
-    await bot.process_commands(message)
 
 #│Run the bot
 bot.run(os.getenv("DISCORD_TOKEN"))
