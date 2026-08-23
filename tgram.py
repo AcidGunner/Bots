@@ -133,7 +133,7 @@ async def the_funny(update: Update, context: ContextTypes.DEFAULT_TYPE):
         await update.message.reply_text("сходи нахуй бля")
     elif "автор" in message:
         await update.message.reply_text("итак автор, кто ты такой...")
-    elif "r34" in message or "rule34" in message or "секс" in message or "порн" in message or "porn" in message or "sex" in message or "рул34" in message or "rule 34" in message or "r 34" in message or "р34" in message or "р 34" in message or "рул 34" in message or "правило34" in message or "правило 34" in message:
+    elif "r34" in message or "rule34" in message or "секс" in message or "порн" in message or "porn" in message or "sex" in message or "рул34" in message or "rule 34" in message or "r 34" in message or "р34" in message or "р 34" in message or "рул 34" in message or "правило34" in message or "правило 34" in message or "ceкс" in message or "секс" in message or "cекc" in message:
         await update.message.reply_text("болваны, только о сексе и думаете")
     elif "мире" in message:
         await update.message.reply_text("> В мире нету красоты, чем пописать с высоты",parse_mode="Markdown")
