@@ -21,7 +21,7 @@ logging.basicConfig(
 )
 
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    await context.bot.send_message(chat_id=update.effective_chat.id, text='Приветствую, друг мой. Я - супер увлекательный, и по меркам идиотичный бот, который был создан одним дибилом.\nВерсия бота: 0.65\nУдачи :>')
+    await context.bot.send_message(chat_id=update.effective_chat.id, text='Приветствую, друг мой. Я - супер увлекательный, и по меркам идиотичный бот, который был создан одним дибилом.\nВерсия бота: 0.66\nУдачи :>')
 
 async def gtaiv(update: Update, context: ContextTypes.DEFAULT_TYPE):
     await context.bot.send_message(chat_id=update.effective_chat.id, text='ну типа гта 4, ичо? стой. ГТА 4??? похуй.')
@@ -85,6 +85,8 @@ async def the_funny(update: Update, context: ContextTypes.DEFAULT_TYPE):
         await update.message.reply_text("малибу")
     elif message.endswith("нахуй"):
         await update.message.reply_text("кусай за хуй")
+    elif message.endswith("нехуй"):
+        await update.message.reply_text("вот кому то делать нехуй")
     elif message.endswith("похуй"):
         await update.message.reply_text("мне не похуй")
     elif message.endswith("нельзя"):
