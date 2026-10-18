@@ -42,6 +42,10 @@ async def on_message(message):
             target_msg_id = 1512910762144960543 
             msg = await message.channel.fetch_message(target_msg_id)
             await msg.edit(content=dev)
+        except discord.NotFound:
+            await message.channel.send("Could not find that message. Make sure the ID is correct.")
+        except discord.Forbidden:
+            await message.channel.send("I don't have permission to edit that message or it isn't mine.")
 
     #│Basic commands
     if message.content.lower().startswith('!'):
