@@ -40,8 +40,17 @@ async def on_message(message):
         dev = message.content[7:]
         try:
             target_msg_id = 1512910762144960543 
-            msg = await message.channel.fetch_message(target_msg_id)
+            target_channel_id = 1459965721609244910
+            channel = bot.get_channel(target_channel_id)
+            
+            if channel is None:
+                await message.channel.send("Could not find that channel. Check the channel ID.")
+                return
+            
+            msg = await channel.fetch_message(target_msg_id)
             await msg.edit(content=dev)
+            await message.channel.send("Message updated successfully!")
+            
         except discord.NotFound:
             await message.channel.send("Could not find that message. Make sure the ID is correct.")
         except discord.Forbidden:
